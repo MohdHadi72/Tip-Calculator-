@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Charm:wght@400;700&family=Cinzel+Decorative:wght@400;700;900&family=Dosis:wght@200..800&family=Homemade+Apple&family=Italianno&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kaushan+Script&family=Merienda:wght@300..900&family=Oranienbaum&family=Rubik+Doodle+Shadow&family=Satisfy&family=Tangerine:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Dosis", sans-serif;
+  box-sizing: border-box;
+  background-color: #4f4657;
+
+}
+
+.container {
+  max-width: 500px;
+  margin: 150px auto;
+  padding: 20px;
+  background-color: #252525;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(249, 248, 248, 0.4);
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  padding-bottom: 17px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid white;
+
+}
+
+.input-grup {
+  margin-bottom: 20px;
+}
+
+.input-grup label {
+  display: block;
+  margin-bottom: 10px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.input-grup input,
+.input-grup select {
+  width: 100%;
+  padding: 7px;
+  font-size: 16px;
+  border: 2px solid #c50752;
+  border-radius: 4px;
+  background-color: #252525;
+  color: #ffffff;
+}
+
+.input-grup select {
+  width: 100%;
+}
+
+.input-grup input::-webkit-outer-spin-button,
+.input-grup input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.input-grup input:focus,
+.input-grup select:focus {
+  outline: none;
+  border-color: #7e0541;
+}
+
+button {
+  background-color: #c50752;
+  padding: 9px;
+  border-radius: 8px;
+  font-weight: 500;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 1%;
+}
+
+.result {
+  margin-top: 35px;
+  border-top: 2px solid #f2f2f2;
+  padding-top: 20px;
+}
+
+.result h2 {
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.result div {
+  margin-bottom: 10px;
+
+}
