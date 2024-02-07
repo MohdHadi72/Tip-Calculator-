@@ -1,63 +1,60 @@
-const tilcolculater = document.getElementById('CalculaterBtn');
-tilcolculater.addEventListener("click", claculateTip);
-
-function claculateTip() {
-  const billamount = document.getElementById("billAmount");
-  const servesrating = document.getElementById("servesrating");
-  const splitecount = document.getElementById("splitecount");
-  const mealetype = document.getElementById("mealetype");
+function calculateTip() {
 
 
-  const tipamout = document.getElementById("tipamout");
-  const totalamoutn = document.getElementById("totalamoutn");
-  const amountPerPerson = document.getElementById("amountPerPerson");
+  const billAmountInput = document.getElementById("billAmount");
+  const serviceRatingSelect = document.getElementById("serviceRating");
+  const splitCountInput = document.getElementById("splitCount");
+  const mealTypeSelect = document.getElementById("mealType");
 
-  const billAmountrate = parseFloat(billamount.value);
-  const servesratingrate = parseFloat(servesrating.value);
-  const splitecountrate = parseFloat(splitecount.value);
-  const mealetyperate = mealetype.value;
+  const tipAmountOutput = document.getElementById("tipAmount");
+  const totalAmountOutput = document.getElementById("totalAmount");
+  const amountPerPersonOutput = document.getElementById("amountPerPerson");
 
-  if (isNaN(billAmountrate) || isNaN(servesratingrate) || isNaN(splitecountrate)) {
-    tipamout.textContent = "Please Enter A Valid Number";
-    totalamoutn.textContent = "";
-    amountPerPerson.textContent = "";
+  const billAmount = parseFloat(billAmountInput.value);
+  const serviceRating = parseFloat(serviceRatingSelect.value);
+  const splitCount = parseInt(splitCountInput.value);
+  const mealType = mealTypeSelect.value;
 
+  if (isNaN(billAmount) || isNaN(serviceRating) || isNaN(splitCount)) {
+    tipAmountOutput.textContent = "Please Enter Valid Numbers";
+    totalAmountOutput.textContent = "";
+    amountPerPersonOutput.textContent = "";
     return;
-
-
   }
 
   let tip;
-  switch (servesrating) {
+  switch (serviceRating) {
     case 1:
-      tip = billamount * 0.05;
+      tip = billAmount * 0.05;
       break;
     case 2:
-      tip = billamount * 0.10;
+      tip = billAmount * 0.10;
       break;
     case 3:
-      tip = billamount * 0.15;
+      tip = billAmount * 0.15;
       break;
     case 4:
-      tip = billamount * 0.20;
+      tip = billAmount * 0.20;
       break;
-
-
   }
 
+  let totalAmount = billAmount + tip;
+  let amountPerPerson = totalAmount / splitCount;
 
-  let totalAmountVar = billamount + tip;
-  let amountPerPersonvar = totalAmountVar / splitecountrate;
-
-  if (mealetyperate === "dinner") {
+  if (mealType === "dinner") {
     tip += 5;
-    totalAmountVar += 5;
-    amountPerPersonvar += 5;
+    totalAmount += 5;
+    amountPerPerson += 5;
   }
 
-  tipamout.textContent = `Tip :$${tip.toFixed(2)}`;
-  totalamoutn.textContent = `Total : $${tip.toFixed(2)}`;
-  amountPerPerson.textContent = `Amount per Person: $${tip.toFixed(2)}`;
+
+  tipAmountOutput.textContent = `Tip: $${tip.toFixed(2)}`;
+  totalAmountOutput.textContent = `Total Amount: $${totalAmount.toFixed(2)}`;
+  amountPerPersonOutput.textContent = `Amount Per Person: $${amountPerPerson.toFixed(2)}`;
+
 
 
 }
+
+
+document.getElementById("calculateBtn").addEventListener("click", calculateTip);
