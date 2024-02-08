@@ -3,7 +3,7 @@ function calculateTip() {
 
   const billAmountInput = document.getElementById("billAmount");
   const serviceRatingSelect = document.getElementById("serviceRating");
-  const splitCountInput = document.getElementById("splitCount");
+  const splitCountInput = document.getElementById("splitecount");
   const mealTypeSelect = document.getElementById("mealType");
 
   const tipAmountOutput = document.getElementById("tipAmount");
@@ -12,7 +12,7 @@ function calculateTip() {
 
   const billAmount = parseFloat(billAmountInput.value);
   const serviceRating = parseFloat(serviceRatingSelect.value);
-  const splitCount = parseInt(splitCountInput.value);
+  const splitCount = parseFloat(splitCountInput.value);
   const mealType = mealTypeSelect.value;
 
   if (isNaN(billAmount) || isNaN(serviceRating) || isNaN(splitCount)) {
@@ -48,9 +48,9 @@ function calculateTip() {
   }
 
 
-  tipAmountOutput.textContent = `Tip: $${tip.toFixed(2)}`;
-  totalAmountOutput.textContent = `Total Amount: $${totalAmount.toFixed(2)}`;
-  amountPerPersonOutput.textContent = `Amount Per Person: $${amountPerPerson.toFixed(2)}`;
+  tipAmountOutput.innerHTML = `Tip: $${tip.toFixed(2)}`;
+  totalAmountOutput.innerHTML = `Total Amount: $${totalAmount.toFixed(2)}`;
+  amountPerPersonOutput.innerHTML = `Amount Per Person: $${amountPerPerson.toFixed(2)}`;
 
 
 
